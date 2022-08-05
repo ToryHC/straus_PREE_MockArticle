@@ -1,0 +1,16 @@
+---
+title: "Mock-Assignment"
+author: "Sam Straus"
+date: "05/08/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+
+
+library("renv")
+library("palmerpenguins")
+library("tidyverse")
+```
+
