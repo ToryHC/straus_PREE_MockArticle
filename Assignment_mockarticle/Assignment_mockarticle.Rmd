@@ -61,7 +61,7 @@ library(cowplot)
 
 # Introduction
 
-*Baetis* spp, belonging to the insect order Ephemeroptera, are commonly used as stream quality indicators @wallace1986response.
+*Baetis* spp, belonging to the insect order Ephemeroptera, are commonly used as stream quality indicators [@wallace1986response].
 
 # Methods
 
@@ -122,6 +122,6 @@ p
 
 # Discussion
 
-*Baetis* sp. (Ephemeroptera) are used as stream quality indicators for catchments @wallace1986response.
+*Baetis* sp. (Ephemeroptera) are used as stream quality indicators for catchments [@wallace1986response].
 
 # References {.unnumbered}
