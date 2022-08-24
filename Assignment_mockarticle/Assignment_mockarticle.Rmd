@@ -106,12 +106,17 @@ baetis.sum <- baetis.sum %>% mutate(ymd = as.Date(paste(year.month,"-01",sep="")
 ## double check that are actually in a date format
 str(baetis.sum$ymd) # nice!
 
+# check out distribution
+hist(baetis.sum$mean.dens)
+hist(log10(baetis.sum$mean.dens))
+
 p <- ggplot(baetis.sum, aes(x=ymd, y=mean.dens, color = harvest)) +
   geom_line() + 
   xlab("Year")+
   ylab("Mean density (# per sq. m)")+
+  scale_y_log10()+
   theme_cowplot()
-  
+
 p
 
 ```
