@@ -50,13 +50,12 @@ knitr::opts_chunk$set(fig.pos = 'H')
 
 ```{r setup, include=FALSE}
 
-library("renv")
-library("palmerpenguins")
-library("tidyverse")
-library(ggplot2)
-library(cowplot)
+# I'm using R-4.0.5, so using date of 2021-05-17
+library(groundhog)
+groundhog.library(tidyverse, date = "2021-05-17")
+groundhog.library(ggplot2, date = "2021-05-17")
+groundhog.library(cowplot, date = "2021-05-17")
 
-#renv::init()
 ```
 
 # Introduction
@@ -72,6 +71,24 @@ Researchers collected data on the number of *Baetis* spp. per square meter in th
 Figure \ref{fig1} is generated using an R chunk.
 
 ```{r, include=FALSE}
+dir.create("../data/")
+# create README.md file for directory
+## File > New File > Markdown File
+
+# download turkey lakes watershed invertebrate density data
+invert.density.url <- "https://ftp.maps.canada.ca/pub//nrcan_rncan/Forests_Foret/TLW/TLW_invertebrateDensity.csv"
+invert.density.destfile <- "/Users/sam/LDP/PROD_REPRO/sam-s-practice-assignment-sdstraus/data/TLW_density.csv"
+
+## certificate issue
+# curl stands for client URL
+# -k means don't verify cert
+## USE WITH CAUTION!!
+download.file(invert.density.url, invert.density.destfile, method = "curl", extra = "-k")
+
+# download associated metadata
+invert.metadata.url <- "https://ftp.maps.canada.ca/pub//nrcan_rncan/Forests_Foret/TLW/TLW_invertebrate_metaEN.csv"
+invert.metadata.destfile <- "/Users/sam/LDP/PROD_REPRO/sam-s-practice-assignment-sdstraus/data/TLW_metadata.csv"
+download.file(invert.metadata.url, invert.metadata.destfile, method = "curl", extra = "-k")
 
 dat <- read.csv("../data/TLW_invertebrateDensity.csv")
 
@@ -127,6 +144,6 @@ p
 
 # Discussion
 
-*Baetis* sp. (Ephemeroptera) are used as stream quality indicators for catchments [@wallace1986response].
+Benthic invertebrates are commonly used as indicators of stream water quality [@guilpart2012use]. *Baetis* sp. (Ephemeroptera) are used as stream quality indicators for catchments [@wallace1986response].
 
 # References {.unnumbered}
