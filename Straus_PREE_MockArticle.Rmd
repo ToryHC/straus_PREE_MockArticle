@@ -71,13 +71,13 @@ Researchers collected data on the number of *Baetis* spp. per square meter in th
 Figure \ref{fig1} is generated using an R chunk.
 
 ```{r, include=FALSE}
-dir.create("../data/")
+dir.create("data/")
 # create README.md file for directory
 ## File > New File > Markdown File
 
 # download turkey lakes watershed invertebrate density data
 invert.density.url <- "https://ftp.maps.canada.ca/pub//nrcan_rncan/Forests_Foret/TLW/TLW_invertebrateDensity.csv"
-invert.density.destfile <- "/Users/sam/LDP/PROD_REPRO/sam-s-practice-assignment-sdstraus/data/NRCAN_1995-2009_TLW_density.csv"
+invert.density.destfile <- "/Users/sam/LDP/PROD_REPRO/straus_PREE_Mock_article/data/NRCAN_1995-2009_TLW_density.csv"
 
 ## certificate issue
 # curl stands for client URL
@@ -87,10 +87,10 @@ download.file(invert.density.url, invert.density.destfile, method = "curl", extr
 
 # download associated metadata
 invert.metadata.url <- "https://ftp.maps.canada.ca/pub//nrcan_rncan/Forests_Foret/TLW/TLW_invertebrate_metaEN.csv"
-invert.metadata.destfile <- "/Users/sam/LDP/PROD_REPRO/sam-s-practice-assignment-sdstraus/data/NRCAN_1995-2009_TLW_metadata.csv"
+invert.metadata.destfile <- "/Users/sam/LDP/PROD_REPRO/straus_PREE_Mock_article/data/NRCAN_1995-2009_TLW_metadata.csv"
 download.file(invert.metadata.url, invert.metadata.destfile, method = "curl", extra = "-k")
 
-dat <- read.csv("../data/NRCAN_1995-2009_TLW_density.csv")
+dat <- read.csv("data/NRCAN_1995-2009_TLW_density.csv")
 
 table(dat$catchment)
 
