@@ -90,7 +90,7 @@ invert.metadata.url <- "https://ftp.maps.canada.ca/pub//nrcan_rncan/Forests_Fore
 invert.metadata.destfile <- "/Users/sam/LDP/PROD_REPRO/sam-s-practice-assignment-sdstraus/data/TLW_metadata.csv"
 download.file(invert.metadata.url, invert.metadata.destfile, method = "curl", extra = "-k")
 
-dat <- read.csv("../data/TLW_invertebrateDensity.csv")
+dat <- read.csv("../data/TLW_density.csv")
 
 table(dat$catchment)
 
