@@ -71,7 +71,7 @@ Researchers collected data on the number of *Baetis* spp. per square meter in th
 Figure \ref{fig1} is generated using an R chunk.
 
 ```{r, include=FALSE}
-dir.create("data/")
+dir.create("../data/")
 # create README.md file for directory
 ## File > New File > Markdown File
 
@@ -90,7 +90,7 @@ invert.metadata.url <- "https://ftp.maps.canada.ca/pub//nrcan_rncan/Forests_Fore
 invert.metadata.destfile <- "/Users/sam/LDP/PROD_REPRO/straus_PREE_Mock_article/data/NRCAN_1995-2009_TLW_metadata.csv"
 download.file(invert.metadata.url, invert.metadata.destfile, method = "curl", extra = "-k")
 
-dat <- read.csv("data/NRCAN_1995-2009_TLW_density.csv")
+dat <- read.csv("../data/NRCAN_1995-2009_TLW_density.csv")
 
 table(dat$catchment)
 
