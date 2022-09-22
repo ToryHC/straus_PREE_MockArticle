@@ -4,3 +4,5 @@ data folder contains data that were downloaded from: https://open.canada.ca/data
 The data were collected by Natural Resources Canada at the Great Lakes Forestry Centre, and rescued as part of a Living Data Project internship for the summer of 2021.
 
 manuscript folder contains Rmarkdown scripts, pdf file, and associated files (including .bib and .csl files) for the mock manuscript.
+
+This Project is being reviewed by Tory Hartley-Cox (2022-09-22). 
